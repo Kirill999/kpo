@@ -19,7 +19,7 @@ namespace laba
         public static Form2 form2;
         public static Form3 form3;
         public static Form4 form4;
-        //
+        ////
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
