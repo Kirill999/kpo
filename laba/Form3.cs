@@ -51,6 +51,7 @@ namespace laba
         //
         //
         //
+        //
         private void label1_Click(object sender, EventArgs e)
         {
             Program.job = "Акушерство и гинекология";
