@@ -19,9 +19,12 @@ namespace laba
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            if (e.RowIndex >= 0)
             {
-                MessageBox.Show("Вы успешно записались на прием");
+                if (e.ColumnIndex > 1 && (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null))
+                {
+                    MessageBox.Show("Вы успешно записались на прием");
+                }
             }
         }
 
@@ -39,7 +42,7 @@ namespace laba
         private void dataGridView1_Click(object sender, DataGridViewCellEventArgs e)
         {
            // if (dataGridView1.getSe
-           // MessageBox.Show("Вы успешно записались на прием");
+            //MessageBox.Show("Вы успешно записались на прием");
         }
 
         public DataGridView GetView()
