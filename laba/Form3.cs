@@ -20,7 +20,7 @@ namespace laba
         private void nextWindow()
         {
             this.Hide();
-            //Program.form4.NewView();
+  
             Program.form4.GetView().Rows.Clear();
             MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
             cmd = new MySql.Data.MySqlClient.MySqlCommand();
@@ -36,16 +36,6 @@ namespace laba
                 row.Cells[0].Value = rdr.GetString("Name");
                 row.Cells[1].Value = rdr.GetString("Cabinet");
                 row.Cells[1 + Int32.Parse(rdr.GetString("day"))].Value = rdr.GetString("timestart") + ":00-" + rdr.GetString("timeend") + ":00";
-                //id = Int32.Parse(rdr.GetString("id"));
-  
-                /*while(true)
-                {
-                    rdr.Read();
-                    if (id == Int32.Parse(rdr.GetString("id")))
-                        row.Cells[1 + Int32.Parse(rdr.GetString("day"))].Value = rdr.GetString("timestart") + "-" + rdr.GetString("timeend");
-                    else
-                        break;
-                }*/
                 if (id != Int32.Parse(rdr.GetString("id")))
                 {
                     Program.form4.GetView().Rows.Add(row);
