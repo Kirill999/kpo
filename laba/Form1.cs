@@ -35,9 +35,11 @@ namespace laba
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "1420")
+            if (textBox1.Text == "1420" &&  dateTimePicker1.Value <= DateTime.Now)
             {
                 this.Hide();
+                textBox1.Text = "";
+                dateTimePicker1.Value = new DateTime(1990, 1, 1);
                 Program.form2.Show();
             }
             else
