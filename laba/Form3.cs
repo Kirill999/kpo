@@ -29,6 +29,7 @@ namespace laba
             cmd.CommandText = "SELECT doctor.id, doctor.Name, doctor.cabinet, timetable.timestart, timetable.timeend, timetable.Day FROM doctor, timetable WHERE doctor.id = timetable.iddoctor AND doctor.idhospital = " + Program.IDHospotal + " AND doctor.post = '" + Program.job + "'";
             rdr = cmd.ExecuteReader();
             int id = 0;
+            Program.form4.GetView().AllowUserToAddRows = true;
             System.Windows.Forms.DataGridViewRow row = (System.Windows.Forms.DataGridViewRow)Program.form4.GetView().Rows[0].Clone();
             while (rdr.Read())
             {
@@ -52,6 +53,7 @@ namespace laba
                 }
                 id = Int32.Parse(rdr.GetString("id"));
             }
+            Program.form4.GetView().AllowUserToAddRows = false;
             rdr.Close();
             Program.form4.Show();
         }
